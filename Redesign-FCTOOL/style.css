@@ -11,14 +11,14 @@
 
 
 body {
-  background-color: var(--tool-gray); /* Aplica a cor de fundo definida nas variáveis globais */
+  background-color: var(--tool-gray); 
   margin: 0; /* pra que cubra a tela toda, chama */
   font-family: "Montserrat", sans-serif; 
   overflow-x: hidden; /* Evita a barra de rolagem horizontal*/
 }
 
 
-/*Tive que colocar o col em uma main pra não quebrar o layout do bootstrap*/
+
 .sidebar-fctool {
   background-color: var(--tool-blue-black);
   height: 100vh;
@@ -51,11 +51,11 @@ body {
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.8); /* Define o texto branco com leve transparência para itens não ativos */
-  font-weight: 500;                  /* Define um peso médio para a fonte, facilitando a leitura */
-  transition: 0.3s ease;             /* Efeito de transição suave em todas as mudanças de estado (hover/active) */
-  padding: 1rem 1.5rem;              /* Define a área de clique do link */
-  margin: 5px 15px;                  /* Espaçamento externo entre os botões do menu */
+  color: rgba(255, 255, 255, 0.8); 
+  font-weight: 500;                 
+  transition: 0.3s ease;     /* Efeito de transição suave em todas as mudanças de estado (hover/active) */
+  padding: 1rem 1.5rem;             
+  margin: 5px 15px;                
 }
 
 .nav-link.active {
@@ -432,19 +432,18 @@ body {
     display: flex;
     flex-direction: column; /* Empilha a logo e o botão de fechar */
     align-items: center;    /* Centraliza horizontalmente no flex */
-    position: relative;     /* Para podermos posicionar o botão X se quiser */
+    position: relative;     
     padding-top: 2rem;      /* Dá um respiro no topo */
   }
 
   .offcanvas-header img {
     margin: 0 auto;         /* Margem automática nas laterais */
     display: block;         /* Garante que a imagem se comporte como bloco */
-    max-width: 120px;       /* Mantém o tamanho que você definiu */
+    max-width: 120px;       
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Ajuste opcional: se o botão 'X' ficar em cima da logo, 
-     podemos jogar ele para o canto absoluto */
+
   .offcanvas-header .btn-close {
     position: absolute;
     top: 15px;
@@ -478,7 +477,7 @@ body {
     position: relative;
   }
 
-  /* 1. TOPBAR: Impede que o texto e o switch briguem por espaço */
+  /* Impede que o texto e o switch briguem por espaço */
     .topbar-fctool {
         height: auto !important; /* Deixa a barra crescer conforme o conteúdo */
         flex-wrap: wrap;        /* Permite que os itens pulem linha */
