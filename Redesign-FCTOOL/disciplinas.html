@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCTOOL - Disciplina</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
+        <div class="offcanvas-header">
+            <img src="./assets/img/logo.png" alt="Logo" class="img-fluid" style="max-width:120px;">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="bi bi-house-door-fill me-3"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 px-0 sidebar-fctool d-none d-md-block">
+                <div class="sidebar-header">
+                    <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-fctool">
+                </div>
+                <hr class="mx-3 mt-0 mb-0 opacity-25 text-white">
+                <nav class="mt-4">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">
+                                <i class="bi bi-house-door-fill me-3"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-10 px-0">
+                <header class="topbar-fctool d-flex align-items-center justify-content-between px-4">
+                    <button class="btn d-md-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+                        <i class="bi bi-list fs-2"></i>
+                    </button>
+                    <div class="ps-2">
+                        <h2 class="fw-bold mb-0" style="color: var(--tool-blue-black); font-size: 1.6rem;">
+                            Disciplinas/Cursos
+                        </h2>
+                        <p class="text-muted mb-0" style="font-size: 0.75rem;">
+                            Gerencie suas disciplinas e acompanhe seus progressos
+                        </p>
+                    </div>
+
+                    <div class="d-flex align-items-center ms-auto">
+                        <div class="d-flex align-items-center me-3">
+                            <span class="me-2 small fw-medium">Light</span>
+                            <div class="form-check form-switch mb-0">
+                                <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+                            </div>
+                            <span class="ms-2 small fw-medium">Dark</span>
+                        </div>
+                    </div>
+
+                    <div class="divisor-vertical"></div>
+
+                    <div class="text-end me-3">
+                        <p class="mb-0 fw-bold small">Victor Estudante</p>
+                        <small class="text-muted d-block">Aluno</small>
+                    </div>
+                    <div class="user-avatar">VO</div>
+                </header>
+
+                <div class="linha-separadora"></div>
+
+                <main class="p-5">
+                    <div class="container-card position-relative mb-5 shadow">
+                        <div class="icone-card shadow">
+                            <img src="./assets/img/classe.png" alt="classe" class="img-fluid">
+                        </div>
+                        <div class="card-text p-4 text-white">
+                            <div class="text-end pe-3">
+                                <h5 class="fw-bold mb-4">Turma XXXX</h5>
+                                <small class="d-block text-white-10">nenhuma aula disponível</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-entrar d-flex align-items-center justify-content-between p-4 shadow">
+                        <div class="text-white">
+                            <h3 class="fw-bold mb-1">Deseja entrar em uma turma?</h3>
+                            <p class="mb-0 opacity-75">Encontre e participe de novas disciplinas disponíveis</p>
+                        </div>
+                        <button class="btn-Entrar d-flex align-items-center fw-bold" data-bs-toggle="modal" data-bs-target="#modalTurma">
+                            <span class="fw-bold me-2 fs-4">+</span> Entrar em uma turma
+                        </button>
+                    </div>
+
+                    <div class="text-black">
+                        <h4 class="fw-medium mt-5">Aulas disponíveis</h4>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-4 mt-4">
+                        <div class="container-aluno">
+                            <div class="fundo-cor-card"></div>
+                            <div class="card-text-aluno d-flex flex-row align-items-center p-3">
+                                <div class="icone-card-aluno flex-shrink-0 me-3">
+                                    <img src="./assets/img/seu-icone.png" alt="ícone" class="img-fluid">
+                                </div>
+                                <div class="d-flex flex-column align-items-start gap-4">
+                                    <h6 class="titulo-disciplina">Matemática Discreta</h6>
+                                    <button class="btn-VerAula btn-sm px-3" onclick="window.location.href='aulas.html'">Ver aula</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTurma" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4">
+                <div class="modal-header border-0">
+                    <h6 class="text-muted small mb-0"><i class="bi bi-people-fill me-2 text-danger"></i> Nova turma</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="fw-bold mb-3">Ingressando em uma turma:</h5>
+                    <p class="text-muted small">Insira o código fornecido pelo seu professor para acessar a turma.</p>
+                    <label class="form-label mt-3">Código de inscrição:</label>
+                    <input type="text" class="form-control rounded-3">
+                    <div class="text-center mt-4">
+                        <button class="btn btn-danger px-4">Entrar →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
