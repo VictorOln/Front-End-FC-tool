@@ -19,6 +19,116 @@ body {
 
 
 
+/*Reaproveitamento de componentes*/
+
+.login-page, .cadastro-page {
+    background-color: var(--tool-gray);
+    position: relative; 
+    overflow-x: hidden;
+    min-height: 100vh; /* Ocupa 100% da altura da tela */
+    
+    
+    display: flex;
+    align-items: center;    
+    justify-content: center;    
+    padding: 20px;         
+}
+
+/* Faixa bicolor que passa por trás */
+.background-stripe {
+    position: absolute;
+    width: 100%;
+    height: 50px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(to right, var(--tool-red) 50%, var(--tool-blue-black) 50%);
+    z-index: 0; /* Fica lá no fundo */
+}
+
+/* --- CARDS (LOGIN E CADASTRO) --- */
+
+.login-card-bs, .cadastro-card-modern {
+    position: relative;
+    z-index: 2;         
+    background: var(--tool-white) !important; 
+    border-radius: 1.2rem !important;
+    border: none;
+    min-width: 280px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+.cadastro-card-modern {
+    border-radius: 20px !important;
+}
+
+
+
+.cadastro-title {
+    color: #333;
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+}
+
+.input-fctool-modern .form-control {
+    border: none !important;
+    border-bottom: 2px solid #ddd !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0;
+    font-size: 0.95rem;
+    color: #333;
+    transition: 0.3s;
+}
+
+.input-fctool-modern .form-control:focus {
+    box-shadow: none;
+    border-color: #00bcd4 !important;
+}
+
+
+.btn-primary-modern {
+    background: linear-gradient(to right, #00bcd4 0%, #00acc1 100%);
+    color: white;
+    border: none;
+    border-radius: 50px !important;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-primary-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    color: white;
+}
+
+
+.btn-google-modern {
+    background-color: transparent;
+    border: 1px solid #ddd !important;
+    color: #555 !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50px !important;
+    padding: 10px 20px;
+    transition: 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-google-modern:hover {
+    background-color: #f8f9fa;
+    border-color: #bbb !important;
+}
+
+
+.link-fctool { color: #0095ff; }
+.btn-primary-fctool { background-color: #0095ff; border: none; color: white; }
+.custom-form-control { height: 40px; font-size: 0.9rem; }
+.extra-small { font-size: 0.75rem; }
+.bi { line-height: 1; }
 .sidebar-fctool {
   background-color: var(--tool-blue-black);
   height: 100vh;
