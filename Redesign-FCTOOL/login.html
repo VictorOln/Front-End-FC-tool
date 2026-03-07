@@ -4,58 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FCTOOL - Login</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="login-page d-flex align-items-center justify-content-center vh-100">
+<body class="login-page">
 
     <div class="background-stripe"></div>
 
-    <!-- Reduzi para col-lg-3 para ficar mais "slim" -->
-    <div class="welcome-card shadow-lg p-4 login-card-bs col-11 col-sm-6 col-md-5 col-lg-3">
-        
-        <div class="text-center mb-2">
-            <img src="./assets/img/logoLogin.png" alt="Logo" class="img-fluid" style="max-width: 65px;">
+    <!-- Card Duplo: Lado Esquerdo (Logo) e Lado Direito (Form) -->
+    <div class="card login-card-double shadow-lg border-0 col-11 col-md-10 col-lg-8 col-xl-7">
+        <div class="row g-0 h-100">
+            
+            <!-- LADO ESQUERDO: Some no mobile -->
+            <div class="col-lg-5 d-none d-lg-flex flex-column align-items-center justify-content-center brand-side p-5 text-center">
+                <img src="./assets/img/LogoLoginn.png" alt="Logo FCTOOL" class="img-fluid mb-4" style="max-width: 200px;">
+                
+                <p class="text-white-50 small">Aprender antes. Explorar juntos. Transformar na prática.</p>
+            </div>
+
+            <!-- LADO DIREITO: Formulário -->
+            <div class="col-lg-7 d-flex align-items-center justify-content-center bg-white p-4 p-md-5 right-side">
+                <div class="w-100" style="max-width: 350px;">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold mb-1" style="color: var(--tool-blue-black);">Bem vindo!</h4>
+                        <p class="text-muted">Faça seu login</p>
+                    </div>
+
+                    <form method="POST">
+                        <div class="mb-3 input-fctool-modern position-relative">
+                            <input type="text" name="usuario" class="form-control" placeholder="Usuário" required>
+                            <i class="bi bi-person position-absolute end-0 top-50 translate-middle-y text-muted pe-2"></i>
+                        </div>
+
+                        <div class="mb-3 input-fctool-modern position-relative">
+                            <input type="password" name="password" class="form-control" placeholder="Senha" required>
+                            <i class="bi bi-lock position-absolute end-0 top-50 translate-middle-y text-muted pe-2"></i>
+                        </div>
+
+                        <div class="text-end mb-4">
+                            <a href="#" class="extra-small text-decoration-none" style="color: var(--tool-blue-light);">Esqueceu a senha?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-fctool w-100 fw-bold py-2 mb-3">ENTRAR</button>
+                        
+                        <div class="text-center text-muted extra-small mb-3">ou</div>
+
+                        <a href="#" class="btn btn-google-modern w-100 mb-4">
+                           <i class="bi bi-google me-2"></i> 
+                            ENTRAR COM O GOOGLE
+                        </a>
+
+                        <div class="text-center">
+                            <small class="text-muted">Não tem conta? <a href="cadastro.html" class="link-fctool fw-bold text-decoration-none">Cadastre-se</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        
-        <h2 class="text-center fw-bold mb-4 fs-4">Login</h2>
-
-        <form>
-    <div class="mb-3 position-relative d-flex align-items-center">
-        <input type="text" name="usuario" class="form-control rounded-pill ps-3 custom-form-control" placeholder="Usuário">
-        <i class="bi bi-person position-absolute end-0 me-3 text-secondary"></i>
-    </div>
-
-    <div class="mb-3 position-relative d-flex align-items-center">
-        <input type="password" name="senha" class="form-control rounded-pill ps-3 custom-form-control" placeholder="Senha">
-        <i class="bi bi-lock position-absolute end-0 me-3 text-secondary"></i>
-    </div>
-
-    <div class="text-center mb-4">
-        <a href="#" class="text-decoration-none fw-bold extra-small link-fctool">Esqueceu a senha?</a>
-    </div>
-
-    
-    <a href="index.html" class="btn btn-primary-fctool w-100 rounded-pill fw-bold py-2 mb-3 d-flex align-items-center justify-content-center">
-        ENTRAR
-    </a>
-
-    <div class="text-center text-muted extra-small mb-3">ou</div>
-
-
-    <a href="index.html" class="btn btn-outline-dark w-100 rounded-pill py-2 d-flex align-items-center justify-content-center gap-2 extra-small">
-        <i class="bi bi-google"></i> ENTRAR COM O GOOGLE
-    </a>
-</form>
-
-        <div class="text-center mt-4">
-            <p class="mb-0 extra-small text-muted">
-                Não tem conta? <a href="cadastro.html" class="text-decoration-none fw-bold link-fctool">Cadastre-se</a>
-            </p>
-        </div>
-
     </div>
 
 </body>
