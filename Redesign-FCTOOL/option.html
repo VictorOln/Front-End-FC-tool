@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FCTOOL - Seleção de Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="cadastro-page">
+
+
+  <div class="background-stripe"></div>
+
+  <!-- Card centralizado -->
+  <div class="card cadastro-card-modern shadow-lg border-0 col-11 col-sm-8 col-md-6 col-lg-4">
+    <div class="card-body p-5 text-center">
+
+      <h1 class="fw-normal mb-5" style="color: #4a6a8a; font-size: 2.5rem;">Eu sou</h1>
+
+      <form action="index.html" method="GET">
+        <div class="d-flex justify-content-center gap-5 mb-5">
+          <!-- Opção Aluno -->
+          <div class="form-check custom-option">
+            <input class="form-check-input custom-check" type="checkbox" name="perfil" id="perfilAluno" value="aluno">
+            <label class="form-check-label fs-5 text-muted" for="perfilAluno">
+              Aluno(a)
+            </label>
+          </div>
+
+
+          <div class="form-check custom-option">
+            <input class="form-check-input custom-check" type="checkbox" name="perfil" id="perfilProf" value="professor">
+            <label class="form-check-label fs-5 text-muted" for="perfilProf">
+              Professor(a)
+            </label>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary-modern w-100 py-3 fw-bold shadow-sm">
+          CONTINUAR
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

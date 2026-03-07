@@ -139,6 +139,29 @@ body {
   z-index: 1000;
 }
 
+/* Ajuste para os Checkboxes da tela de escolha */
+.custom-check {
+    width: 25px !important;
+    height: 25px !important;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid #ccc !important;
+}
+
+.custom-check:checked {
+    background-color: #bc8cc4 !important; /* Cor roxinha da imagem */
+    border-color: #bc8cc4 !important;
+}
+
+.custom-option label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Garante que o título 'Eu sou' tenha o espaçamento da imagem */
+.cadastro-page h1 {
+    letter-spacing: 1px;
+}
 
 .sidebar-header {
   height: 100px; /* altura fixa pra logo */
