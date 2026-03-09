@@ -1,663 +1,701 @@
-:root {
-  /* Variáveis de cor da paleta*/
-  --tool-blue-black: #002133; 
-  --tool-red: #b01d22;        
-  --tool-gray: #f3f3f3;      
-  --tool-white: #ffffff;      
-  --tool-blue-light: #72a2c0; 
-  --tool-blue-hover: #6a9dbc; 
-  --tool-divi: #dee2e6;      
-  --tool-vinho: #5b1011;
-}
+  :root {
+    /* Variáveis de cor da paleta*/
+    --tool-blue-black: #002133; 
+    --tool-red: #b01d22;        
+    --tool-gray: #f3f3f3;      
+    --tool-white: #ffffff;      
+    --tool-blue-light: #72a2c0; 
+    --tool-blue-hover: #6a9dbc; 
+    --tool-divi: #dee2e6;      
+    --tool-vinho: #5b1011;
+  }
 
 
-body {
-  background-color: var(--tool-gray); 
-  margin: 0; /* pra que cubra a tela toda, chama */
-  font-family: "Montserrat", sans-serif; 
-  overflow-x: hidden; /* Evita a barra de rolagem horizontal*/
-}
+  body {
+    background-color: var(--tool-gray); 
+    margin: 0; /* pra que cubra a tela toda, chama */
+    font-family: "Montserrat", sans-serif; 
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal*/
+  }
 
 
 
-/*Reaproveitamento de componentes*/
+  /*Reaproveitamento de componentes*/
 
-.login-page, .cadastro-page {
-    background-color: var(--tool-gray);
-    position: relative; 
-    overflow-x: hidden;
-    min-height: 100vh; /* Ocupa 100% da altura da tela */
-    
+  .login-page, .cadastro-page {
+      background-color: var(--tool-gray);
+      position: relative; 
+      overflow-x: hidden;
+      min-height: 100vh; /* Ocupa 100% da altura da tela */
+      
+      
+      display: flex;
+      align-items: center;    
+      justify-content: center;    
+      padding: 20px;         
+  }
+
+  /* Faixa bicolor que passa por trás */
+  .background-stripe {
+      position: absolute;
+      width: 100%;
+      height: 50px; 
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(to right, var(--tool-vinho) 50%, var(--tool-blue-black) 50%);
+      z-index: 0; /* Fica lá no fundo */
+  }
+
+  /* --- CARDS (LOGIN, CADASTRO E OPTION) --- */
+
+  .login-card-bs, .cadastro-card-modern, .login-card-double {
+      position: relative;
+      z-index: 2;         
+      background: var(--tool-white) !important; 
+      border: none;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ajustes específicos de arredondamento */
+  .login-card-bs, .login-card-double { border-radius: 1.5rem !important; }
+  .cadastro-card-modern { border-radius: 20px !important; }
+
+  /* Configuração do Card Duplo (Login) */
+  .login-card-double {
+      overflow: hidden;
+      min-height: 500px;
+  }
+
+  /* Lado Esquerdo  */
+  .brand-side {
+      background-color: #631215; 
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+  }
+
+  /* Lado Direito Formulário */
+  .right-side {
+      border-top-right-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+  }
+
+  /* --- FORMULÁRIOS E INPUTS MODERNOS --- */
+
+  .cadastro-title {
+      color: #333;
+      font-size: 1.8rem;
+      letter-spacing: -1px;
+  }
+
+  .input-fctool-modern {
+      border-bottom: 2px solid #ddd !important;
+      margin-bottom: 1rem;
+      position: relative;
+  }
+
+  .input-fctool-modern .form-control {
+      border: none !important;
+      border-radius: 0 !important;
+      background-color: transparent !important;
+      padding-left: 0;
+      padding-right: 35px; /* Espaço para o ícone de login */
+      font-size: 0.95rem;
+      color: #333;
+      transition: 0.3s;
+  }
+
+  .input-fctool-modern .form-control:focus {
+      box-shadow: none;
+      border-bottom-color: #00bcd4 !important; /* Cor ciano ao focar */
+  }
+
+  /* --- BOTÕES --- */
+
+  .btn-primary-modern {
+      background: linear-gradient(to right, #00bcd4 0%, #00acc1 100%);
+      color: white;
+      border: none;
+      border-radius: 50px !important;
+      font-size: 0.9rem;
+      transition: 0.3s;
+  }
+
+  .btn-primary-modern:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+      color: white;
+  }
+
+  .btn-google-modern {
+      background-color: transparent;
+      border: 1px solid #ddd !important;
+      color: #555 !important;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 50px !important;
+      padding: 10px 20px;
+      transition: 0.3s;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .btn-google-modern:hover {
+      background-color: #f8f9fa;
+      border-color: #bbb !important;
+  }
+
+  .link-fctool { color: #0095ff; }
+  .btn-primary-fctool { background-color: #0095ff; border: none; color: white; }
+  .custom-form-control { height: 40px; font-size: 0.9rem; }
+  .extra-small { font-size: 0.75rem; }
+  .bi { line-height: 1; }
+  .sidebar-fctool {
+    background-color: var(--tool-blue-black);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    box-shadow: 7px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  /* Ajuste para os Checkboxes da tela de escolha */
+  .custom-check {
+      width: 25px !important;
+      height: 25px !important;
+      margin-right: 10px;
+      cursor: pointer;
+      border: 2px solid #ccc !important;
+  }
+
+  .custom-check:checked {
+      background-color: #bc8cc4 !important; /* Cor roxinha da imagem */
+      border-color: #bc8cc4 !important;
+  }
+
+  .custom-option label {
+      cursor: pointer;
+      user-select: none;
+  }
+
+
+  .cadastro-page h1 {
+      letter-spacing: 1px;
+  }
+
+  .sidebar-header {
+    height: 100px; /* altura fixa pra logo */
+    display: flex; 
+    align-items: center; /* Alinha a logo verticalmente*/
+    justify-content: center;    /* Centraliza a logo horizontalmente*/
+    padding-top: 15px; /* Espaçamento interno*/
+  }
+
+  .logo-fctool {
+    max-width: 65px; /* Define um limite de largura para a logo, garantindo que não quebre o layout da sidebar */
+    height: auto;    /* Mantém a proporção da imagem ao redimensionar a largura, isso daq foi mais pra responsividade, não sabia se o bootstrap fazia isso sozinho*/
+  }
+
+  .sidebar-fctool hr {
+    margin: 0;
+    border: none;
+    height: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25); 
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8); 
+    font-weight: 500;                 
+    transition: 0.3s ease;     /* Efeito de transição suave em todas as mudanças de estado (hover/active) */
+    padding: 1rem 1.5rem;             
+    margin: 5px 15px;  
     
     display: flex;
-    align-items: center;    
-    justify-content: center;    
-    padding: 20px;         
-}
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    white-space: nowrap; /* nao deixa acontecer a quebra que tava acontecendo */
+  }
 
-/* Faixa bicolor que passa por trás */
-.background-stripe {
-    position: absolute;
-    width: 100%;
-    height: 50px; 
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(to right, var(--tool-vinho) 50%, var(--tool-blue-black) 50%);
-    z-index: 0; /* Fica lá no fundo */
-}
+  .nav-link i{
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.2rem;
+  }
 
-/* --- CARDS (LOGIN, CADASTRO E OPTION) --- */
+  .nav-link.active {
+    background-color: var(--tool-red) !important; 
+    border-radius: 25px;                            
+    color: white;                                   
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;    
+  }
 
-.login-card-bs, .cadastro-card-modern, .login-card-double {
-    position: relative;
-    z-index: 2;         
-    background: var(--tool-white) !important; 
-    border: none;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Ajustes específicos de arredondamento */
-.login-card-bs, .login-card-double { border-radius: 1.5rem !important; }
-.cadastro-card-modern { border-radius: 20px !important; }
-
-/* Configuração do Card Duplo (Login) */
-.login-card-double {
-    overflow: hidden;
-    min-height: 500px;
-}
-
-/* Lado Esquerdo  */
-.brand-side {
-    background-color: #631215; 
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-}
-
-/* Lado Direito Formulário */
-.right-side {
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-}
-
-/* --- FORMULÁRIOS E INPUTS MODERNOS --- */
-
-.cadastro-title {
-    color: #333;
-    font-size: 1.8rem;
-    letter-spacing: -1px;
-}
-
-.input-fctool-modern {
-    border-bottom: 2px solid #ddd !important;
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.input-fctool-modern .form-control {
-    border: none !important;
-    border-radius: 0 !important;
-    background-color: transparent !important;
-    padding-left: 0;
-    padding-right: 35px; /* Espaço para o ícone de login */
-    font-size: 0.95rem;
-    color: #333;
-    transition: 0.3s;
-}
-
-.input-fctool-modern .form-control:focus {
-    box-shadow: none;
-    border-bottom-color: #00bcd4 !important; /* Cor ciano ao focar */
-}
-
-/* --- BOTÕES --- */
-
-.btn-primary-modern {
-    background: linear-gradient(to right, #00bcd4 0%, #00acc1 100%);
-    color: white;
-    border: none;
-    border-radius: 50px !important;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.btn-primary-modern:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
-    color: white;
-}
-
-.btn-google-modern {
-    background-color: transparent;
-    border: 1px solid #ddd !important;
-    color: #555 !important;
-    font-size: 0.8rem;
-    font-weight: 700;
-    border-radius: 50px !important;
-    padding: 10px 20px;
-    transition: 0.3s;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-google-modern:hover {
-    background-color: #f8f9fa;
-    border-color: #bbb !important;
-}
-
-.link-fctool { color: #0095ff; }
-.btn-primary-fctool { background-color: #0095ff; border: none; color: white; }
-.custom-form-control { height: 40px; font-size: 0.9rem; }
-.extra-small { font-size: 0.75rem; }
-.bi { line-height: 1; }
-.sidebar-fctool {
-  background-color: var(--tool-blue-black);
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
-  box-shadow: 7px 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-}
-
-/* Ajuste para os Checkboxes da tela de escolha */
-.custom-check {
-    width: 25px !important;
-    height: 25px !important;
-    margin-right: 10px;
-    cursor: pointer;
-    border: 2px solid #ccc !important;
-}
-
-.custom-check:checked {
-    background-color: #bc8cc4 !important; /* Cor roxinha da imagem */
-    border-color: #bc8cc4 !important;
-}
-
-.custom-option label {
-    cursor: pointer;
-    user-select: none;
-}
+  .nav-link:hover:not(.active) {
+    background-color: var(--tool-blue-hover); 
+    color: white;                           
+    border-radius: 25px;                     
+  }
 
 
-.cadastro-page h1 {
-    letter-spacing: 1px;
-}
+  /*barra superior*/
+  .topbar-fctool {
+    height: 100px; /* Define a altura fixa da barra de navegação superior */
+  }
 
-.sidebar-header {
-  height: 100px; /* altura fixa pra logo */
-  display: flex; 
-  align-items: center; /* Alinha a logo verticalmente*/
-  justify-content: center;    /* Centraliza a logo horizontalmente*/
-  padding-top: 15px; /* Espaçamento interno*/
-}
+  .divisor-vertical {
+    height: 30px; 
+    border-left: 1px solid var(--tool-divi);   
+    margin: 0 1rem;                          
+  }
 
-.logo-fctool {
-  max-width: 65px; /* Define um limite de largura para a logo, garantindo que não quebre o layout da sidebar */
-  height: auto;    /* Mantém a proporção da imagem ao redimensionar a largura, isso daq foi mais pra responsividade, não sabia se o bootstrap fazia isso sozinho*/
-}
+  .linha-separadora {
+    height: 2px;                               
+    background: linear-gradient(to right, var(--tool-red), var(--tool-blue-light)); 
+    width: 100%;                               
+    margin: 0;                                
+  }
 
-.sidebar-fctool hr {
-  margin: 0;
-  border: none;
-  height: 2px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25); 
-}
-
-.nav-link {
-  color: rgba(255, 255, 255, 0.8); 
-  font-weight: 500;                 
-  transition: 0.3s ease;     /* Efeito de transição suave em todas as mudanças de estado (hover/active) */
-  padding: 1rem 1.5rem;             
-  margin: 5px 15px;                
-}
-
-.nav-link.active {
-  background-color: var(--tool-red) !important; 
-  border-radius: 25px;                            
-  color: white;                                   
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;    
-}
-
-.nav-link:hover:not(.active) {
-  background-color: var(--tool-blue-hover); 
-  color: white;                           
-  border-radius: 25px;                     
-}
+  /*Avatar do usuário*/
+  .user-avatar {
+    width: 40px;                               
+    height: 40px;                              
+    background-color: var(--tool-blue-light);  
+    font-size: 0.8rem;                        
+    border-radius: 50%;                       
+    display: flex;                             
+    align-items: center;                       
+    justify-content: center;                   
+    color: var(--tool-white);                 
+    font-weight: bold;                        
+  }
 
 
-/*barra superior*/
-.topbar-fctool {
-  height: 100px; /* Define a altura fixa da barra de navegação superior */
-}
+  .welcome-card {
+    background-color: var(--tool-white);       /* Fundo branco para se destacar do fundo cinza da página */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+    border-radius: 1.5rem;                    
+    border: none;                              
+    max-width: 900px;                          
+    margin: 0 auto;                            /* Centraliza o card horizontalmente na página */
+  }
 
-.divisor-vertical {
-  height: 30px; 
-  border-left: 1px solid var(--tool-divi);   
-  margin: 0 1rem;                          
-}
-
-.linha-separadora {
-  height: 2px;                               
-  background: linear-gradient(to right, var(--tool-red), var(--tool-blue-light)); 
-  width: 100%;                               
-  margin: 0;                                
-}
-
-/*Avatar do usuário*/
-.user-avatar {
-  width: 40px;                               
-  height: 40px;                              
-  background-color: var(--tool-blue-light);  
-  font-size: 0.8rem;                        
-  border-radius: 50%;                       
-  display: flex;                             
-  align-items: center;                       
-  justify-content: center;                   
-  color: var(--tool-white);                 
-  font-weight: bold;                        
-}
+  .card-divider {
+    height: 1px;                               
+    background-color: var(--tool-red);         
+    width: 100%;                               
+    margin: 40px 0 20px 0;                     
+    opacity: 0.2;                             
+  }
 
 
-.welcome-card {
-  background-color: var(--tool-white);       /* Fundo branco para se destacar do fundo cinza da página */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
-  border-radius: 1.5rem;                    
-  border: none;                              
-  max-width: 900px;                          
-  margin: 0 auto;                            /* Centraliza o card horizontalmente na página */
-}
+  .dot {
+    width: 10px;                             
+    height: 10px;
+    border-radius: 50%;                       
+    display: inline-block;                     
+  }
 
-.card-divider {
-  height: 1px;                               
-  background-color: var(--tool-red);         
-  width: 100%;                               
-  margin: 40px 0 20px 0;                     
-  opacity: 0.2;                             
-}
+  .dot-dark { background-color: var(--tool-blue-black); } 
+  .dot-red { background-color: var(--tool-red); }         
+  .dot-blue { background-color: var(--tool-blue-light); } 
 
-
-.dot {
-  width: 10px;                             
-  height: 10px;
-  border-radius: 50%;                       
-  display: inline-block;                     
-}
-
-.dot-dark { background-color: var(--tool-blue-black); } 
-.dot-red { background-color: var(--tool-red); }         
-.dot-blue { background-color: var(--tool-blue-light); } 
-
-/* Footer da página */
-.footer-copy {
-  text-align: right;                        
-  margin-top: 1.5rem;                      
-  padding-right: 22%;                        
-  color: #6c757d;                           
-  font-size: 0.8rem;                        
-}
+  /* Footer da página */
+  .footer-copy {
+    text-align: right;                        
+    margin-top: 1.5rem;                      
+    padding-right: 22%;                        
+    color: #6c757d;                           
+    font-size: 0.8rem;                        
+  }
 
 
- /*Cards da disciplina*/
+  /*Cards da disciplina*/
 .container-card {
-  width: 350px;
-  height: 115px;
-  margin-top: 50px;
   border-radius: 15px;
-  position: relative;
-  overflow: visible;
-
+    width: 260px; 
+    height: 120px;
+    margin-top: 50px;
+    position: relative;
 }
+
 .icone-card {
-  background-color: var(--tool-white);
-  width: 90px;
-  height: 90px;
-  border-radius: 15px;
-  padding: 15px;
-  position: absolute;
-  top: -30px;   /* sobe mais */
-  left: 25px;
-  z-index: 3;
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
+    background-color: var(--tool-white);
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    padding: 15px;
+    position: absolute;
+    top: -30px;
+    left: 20px; /* Puxei 5px para a esquerda para ganhar espaço no texto */
+    z-index: 3;
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.25);
 }
 
 .icone-card img {
-  max-width: 100%; /* Garante que a imagem da disciplina caiba no quadrado branco */
-  max-height: 100%;
-}
-/*car de turma vermelho*/
-.card-text {
-  background-color: var(--tool-red);
-  border-radius: 15px;
-  min-height: 115px;
-  display: flex;
-  align-items: center;
-  justify-content: end; 
-  position: relative;
-  z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.card-text h5 {
-  margin: 0;
-  max-width: 180px; /* controla largura do texto */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.card-text {
+    background-color: var(--tool-red);
+    border-radius: 15px;
+    height: 120px;
+    display: flex;
+    padding: 15px;
+    position: relative;
+    overflow: hidden; /* Corta qualquer vazamento */
 }
+
+.conteudo-informativo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Título no topo, status no rodapé */
+    width: 100%;
+    height: 100%;
+}
+
+.titulo-turma {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+    line-height: 1.1; 
+    align-self: flex-end;   
+    text-align: left;   
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Adiciona ... na 2ª linha se o nome for gigante */
+    white-space: normal;      /* Permite a quebra de linha */
+    max-width: 120px;         /* Limite de largura para não bater no ícone */
+    word-break: break-word;   /* Ajuda a quebrar no lugar certo se a palavra for muito grandona */
+}
+
+.status-aula {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem; 
+    font-weight: 500;
+    color: white;
+    width: 100%;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
 
 /* Botão de entrar em nova turma */
-.container-entrar {
-  background-color: var(--tool-blue-black);  
-  border-radius: 15px;                       
-}
-
-.btn-Entrar {
-  background-color: var(--tool-red);     
-  border: none;                              
-  border-radius: 8px;                        
-  color: var(--tool-white);                  
-}
-
-.btn-Entrar:hover {
-  transform: translateY(-6px); /* Efeito de futuar */
-}
-
-/*aqui eu deu uma reaproveitada em alguns cards, por que usei a mesma lpgística tanto pro da turma, quanto pro da de disciplina*/
-.container-aluno {
-  width: 100%;
-  max-width: 300px;                              /* Define a largura padrão dos cards*/
-  position: relative;                        /* tive que colocar isso pra conseguir botar o fundo colorido */
-  margin-top: 20px;                          /* Espaço pra aparecer o fundo e dar aquele efeito escada */
-  transition: transform 0.25s ease, box-shadow 0.25s ease; 
-}
-
-.container-aluno:hover { 
-  transform: translateY(-6px); /* Move o card inteiro para cima ao passar o mouse, flutuandoooo */
-}
-
-
-
-.container-aluno:nth-child(odd) .btn-VerAula,
-.lista-aulas .container-aluno:nth-child(odd) .btn-VerAula-final { background-color: var(--tool-blue-black); }
-
-
-.container-aluno:nth-child(even) .btn-VerAula,
-.lista-aulas .container-aluno:nth-child(even) .btn-VerAula-final { background-color: var(--tool-red); }
-
-/*a parte mais difícil de fazer foi esse diabo aqui*/
-.fundo-cor-card {
-  position: absolute; /* Tira o elemento da ordem normal para colocá-lo atrás do card principal   */
-  top: -7px; /* Faz a cor fazer o efeito de escada */
-  left: 15px;                                
-  width: 273px; /* Largura menor que o card principal pra dar o efeito que eu coloquei no figma */
-  height: 65px;                              
-  background-color: var(--tool-blue-black);  
-  border-radius: 22px;                       
-  z-index: 1; /* Fica na camada de trás */
-}
-
-
-.container-aluno:nth-child(even) .fundo-cor-card { background-color: var(--tool-red); }
-
-/*Card do aluno, parte principal*/
-.card-text-aluno {
-  background-color: var(--tool-white);       
-  min-height: 160px;/* Garante que todos os cards tenham o mesmo tamanho mínimo na grade */
-  padding: 30px;/* Espaçamento interno*/
-  border-radius: 22px;                       
-  position: relative;                        
-  z-index: 2;/* Fica na camada da frente, escondendo parte da aba colorida */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 0.25s ease;         /* Suaviza a mudança da sombra durante o hover */
-}
-
-.container-aluno:hover .card-text-aluno {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18); 
-}
-
-/* Ícone do card do aluno o containerzin da imagem */
-.icone-card-aluno {
-  width: 70px;                               /* Dimensões do quadrado de fundo do ícone */
-  height: 70px;
-  border-radius: 20px;                      
-  background: #f1f1f1;                       /* Cinza muito claro para o fundo do ícone */
-  display: flex;                            
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0; /* Impede que o container do ícone seja esmagado se o título for grande */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.icone-card-aluno img { max-width: 55%; }      /* Garante que o ícone interno não ultrapasse o container cinza */
-
-.titulo-disciplina {
-  font-weight: 600; /* Fonte em negrito para destaque do nome da aula */
-  margin: 0;  /* Remove margens padrão de tags h5/h6 */
-  max-width: 140px;  /* Limita a largura para evitar que nomes gigantes quebrem o layout */
-  white-space: nowrap;  /* Impede que o texto pule para a linha de baixo */
-  overflow: hidden;   /* Esconde a parte do texto que ultrapassar os 140px */
-  text-overflow: ellipsis;    /* Adiciona os "..." automaticamente no final de nomes longos */
-}
-
-/* Botões ver aula */
-.btn-VerAula {
-  background-color: var(--tool-blue-black);  
-  color: white;                             
-  border-radius: 14px;                    
-  border: none;                           
-  width: 120px;                         
-  transition: all 0.25s ease;                
-}
-
-.btn-VerAula:hover {
-  background-color: var(--tool-blue-black);  
-  transform: scale(1.05);                   
-}
-
-
-.lista-aulas {
-  display: flex;                             
-  flex-wrap: wrap;                          
-  gap: 16px;                               
-}
-
-.lista-aulas .container-aluno {
-  flex: 0 0 300px;     /* Garante que os cards não estiquem nem encolham, mantendo 300px fixos */
-}
-
-/* Alternância de cores ímpar/par usando variáveis de escopo local */
-.lista-aulas .container-aluno:nth-child(odd) { --card-color: var(--tool-blue-black); } 
-.lista-aulas .container-aluno:nth-child(even) { --card-color: var(--tool-red); }       
-
-.aulas-page .container-aluno { 
-  transform: scale(0.88); /* Diminui os cards em 12% nesta página específica para caberem mais itens */
-  transform-origin: top center;/* Define que o encolhimento aconteça a partir do topo */
-}
-
-.aulas-page .card-text-aluno > div:not(.topo-aula-card) { 
-  padding: 16px 24px !important;             /* Ajuste de respiro para o conteúdo de texto da aula */
-  min-height: auto;                          /* Remove a restrição de altura mínima nesta página */
-}
-
-.aulas-page .topo-aula-card { 
-  padding: 16px !important;                  /* Reduz o padding interno do cabeçalho do card */
-  margin-bottom: -7px !important;            /* Ajuste negativo para aproximar o cabeçalho do corpo do card */
-}
-
-.card-text-aluno > div:not(.topo-aula-card){
-  overflow-wrap: break-word;                 /*quebra palavras longas para não estourar o card */
-  word-wrap: break-word;
-  word-break: break-word;
-}
-
-/* Descrição alinhada à esquerda */
-.aulas-page .card-text-aluno > div:nth-of-type(2) {
-  text-align: left !important;               /* Força o alinhamento à esquerda*/
-  margin-bottom: 5px !important;            
-  width: 100%;                               /* Ocupa toda a largura disponível para o alinhamento funcionar */
-}
-
-/* Topo do card (Cabeçalho colorido dentro do card de aula) */
-.topo-aula-card {
-  width: 100%;                              
-  padding: 24px;                            
-  text-align: center;                       
-  border-radius: 20px;                       
-  background-color: var(--card-color);       
-  color: white;                          
-}
-
-/* Botão final do card aula */
-.btn-VerAula-final {
-  background-color: var(--card-color);       
-  color: white;                              
-  border-radius: 12px;                     
-  border: none;                             
-  font-weight: 600;                          
-  padding: 10px 24px;                       
-  margin-bottom: 24px;                       
-  transition: all 0.25s ease; /* Suaviza escala e transparência no hover */
-}
-
-.btn-VerAula-final:hover {
-  transform: scale(1.05);                   
-  opacity: 0.9;                             /
-}
-
-/* Caixa do modal */
-.modal-content {
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-/* Título principal */
-.modal-body h5 {
-    color: var(--tool-blue-black);
-}
-
-/* Texto descritivo */
-.modal-body p {
-    font-size: 0.9rem;
-}
-
-/* Input custom */
-.modal-body input {
-    height: 45px;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    padding-left: 15px;
-}
-
-.modal-body input:focus {
-    box-shadow: none;
-    border-color: #dc3545; /* vermelho */
-}
-
-/* Botão principal */
-.modal-body .btn-danger {
-    border-radius: 12px;
-    padding: 10px 30px;
-    font-weight: 600;
-}
-
-/* Responsividade (Media Queries para telas de celular/tablet) */
-@media (max-width: 768px) {
-  .footer-copy { text-align: center; padding-right: 0; } /* Centraliza o copyright no mobile */
-  main { padding: 20px; }                                 /* Reduz o espaçamento geral da página */
-  .welcome-card { padding: 25px; }                        /* Compacta o card de boas-vindas */
-  .container-aluno { width: 100%; }                       /* Faz os cards ocuparem a largura total da tela no celular */
-  .card-text-aluno { flex-direction: column; text-align: center; } /* Empilha ícone e texto verticalmente no mobile */
-  .icone-card-aluno { margin-bottom: 15px; }              /* Espaço entre ícone e texto no modo empilhado */
-  .titulo-disciplina { 
-    max-width: 100%;                                      /* Remove o limite de largura do título */
-    white-space: normal;                                  /* Permite que o título quebre linhas no celular */
-    text-overflow: unset;                                 /* Remove as reticências para mostrar o nome todo */
-  }
-  .sidebar-fctool {
-    background-color: var(--tool-blue-black);
-    display: none;
-  }
-  .offcanvas{
-    background-color: var(--tool-blue-black) !important;
-    color: white; /* Garante que o texto geral fique visível */
-  }
- .offcanvas-header {
-    display: flex;
-    flex-direction: column; /* Empilha a logo e o botão de fechar */
-    align-items: center;    /* Centraliza horizontalmente no flex */
-    position: relative;     
-    padding-top: 2rem;      /* Dá um respiro no topo */
+  .container-entrar {
+    background-color: var(--tool-blue-black);  
+    border-radius: 15px;                       
   }
 
-  .offcanvas-header img {
-    margin: 0 auto;         /* Margem automática nas laterais */
-    display: block;         /* Garante que a imagem se comporte como bloco */
-    max-width: 120px;       
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .btn-Entrar {
+    background-color: var(--tool-red);     
+    border: none;                              
+    border-radius: 8px;                        
+    color: var(--tool-white);                  
   }
 
-
-  .offcanvas-header .btn-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    margin: 0;
-    filter: invert(1) grayscale(100%) brightness(200%);
+  .btn-Entrar:hover {
+    transform: translateY(-6px); /* Efeito de futuar */
   }
 
-  
-  /* Faz os cards ocuparem a largura total da linha no mobile */
+  /*aqui eu deu uma reaproveitada em alguns cards, por que usei a mesma lpgística tanto pro da turma, quanto pro da de disciplina*/
   .container-aluno {
     width: 100%;
-    max-width: 320px; /* Limite para não ficar gigante em tablets */
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 300px;                              /* Define a largura padrão dos cards*/
+    position: relative;                        /* tive que colocar isso pra conseguir botar o fundo colorido */
+    margin-top: 20px;                          /* Espaço pra aparecer o fundo e dar aquele efeito escada */
+    transition: transform 0.25s ease, box-shadow 0.25s ease; 
   }
 
-  /* O fundo 'escada' precisa ser menor que o card da frente */
+  .container-aluno:hover { 
+    transform: translateY(-6px); /* Move o card inteiro para cima ao passar o mouse, flutuandoooo */
+  }
+
+
+
+  .container-aluno:nth-child(odd) .btn-VerAula,
+  .lista-aulas .container-aluno:nth-child(odd) .btn-VerAula-final { background-color: var(--tool-blue-black); }
+
+
+  .container-aluno:nth-child(even) .btn-VerAula,
+  .lista-aulas .container-aluno:nth-child(even) .btn-VerAula-final { background-color: var(--tool-red); }
+
+  /*a parte mais difícil de fazer foi esse diabo aqui*/
   .fundo-cor-card {
-    width: 90%;      /* Em vez de fixo, ele ocupa 90% do card pai */
-    left: 5%;        /* Centraliza o fundo (5% de cada lado sobra) */
-    top: -10px;      /* Mantém ele subindo um pouco */
-    height: 60px;
-    z-index: 1;
+    position: absolute; /* Tira o elemento da ordem normal para colocá-lo atrás do card principal   */
+    top: -7px; /* Faz a cor fazer o efeito de escada */
+    left: 15px;                                
+    width: 273px; /* Largura menor que o card principal pra dar o efeito que eu coloquei no figma */
+    height: 65px;                              
+    background-color: var(--tool-blue-black);  
+    border-radius: 22px;                       
+    z-index: 1; /* Fica na camada de trás */
   }
 
-  /* Garante que o card da frente fique por cima */
+
+  .container-aluno:nth-child(even) .fundo-cor-card { background-color: var(--tool-red); }
+
+  /*Card do aluno, parte principal*/
   .card-text-aluno {
-    width: 100%;
-    z-index: 2;
-    position: relative;
+    background-color: var(--tool-white);       
+    min-height: 160px;/* Garante que todos os cards tenham o mesmo tamanho mínimo na grade */
+    padding: 30px;/* Espaçamento interno*/
+    border-radius: 22px;                       
+    position: relative;                        
+    z-index: 2;/* Fica na camada da frente, escondendo parte da aba colorida */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.25s ease;         /* Suaviza a mudança da sombra durante o hover */
   }
 
-  /* Impede que o texto e o switch briguem por espaço */
-    .topbar-fctool {
-        height: auto !important; /* Deixa a barra crescer conforme o conteúdo */
-        flex-wrap: wrap;        /* Permite que os itens pulem linha */
-        padding: 15px !important;
-        gap: 10px;
+  .container-aluno:hover .card-text-aluno {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18); 
+  }
+
+  /* Ícone do card do aluno o containerzin da imagem */
+  .icone-card-aluno {
+    width: 70px;                               /* Dimensões do quadrado de fundo do ícone */
+    height: 70px;
+    border-radius: 20px;                      
+    background: #f1f1f1;                       /* Cinza muito claro para o fundo do ícone */
+    display: flex;                            
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Impede que o container do ícone seja esmagado se o título for grande */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .icone-card-aluno img { max-width: 55%; }      /* Garante que o ícone interno não ultrapasse o container cinza */
+
+  .titulo-disciplina {
+    font-weight: 600; /* Fonte em negrito para destaque do nome da aula */
+    margin: 0;  /* Remove margens padrão de tags h5/h6 */
+    max-width: 140px;  /* Limita a largura para evitar que nomes gigantes quebrem o layout */
+    white-space: nowrap;  /* Impede que o texto pule para a linha de baixo */
+    overflow: hidden;   /* Esconde a parte do texto que ultrapassar os 140px */
+    text-overflow: ellipsis;    /* Adiciona os "..." automaticamente no final de nomes longos */
+  }
+
+  /* Botões ver aula */
+  .btn-VerAula {
+    background-color: var(--tool-blue-black);  
+    color: white;                             
+    border-radius: 14px;                    
+    border: none;                           
+    width: 120px;                         
+    transition: all 0.25s ease;                
+  }
+
+  .btn-VerAula:hover {
+    background-color: var(--tool-blue-black);  
+    transform: scale(1.05);                   
+  }
+
+
+  .lista-aulas {
+    display: flex;                             
+    flex-wrap: wrap;                          
+    gap: 16px;                               
+  }
+
+  .lista-aulas .container-aluno {
+    flex: 0 0 300px;     /* Garante que os cards não estiquem nem encolham, mantendo 300px fixos */
+  }
+
+  /* Alternância de cores ímpar/par usando variáveis de escopo local */
+  .lista-aulas .container-aluno:nth-child(odd) { --card-color: var(--tool-blue-black); } 
+  .lista-aulas .container-aluno:nth-child(even) { --card-color: var(--tool-red); }       
+
+  .aulas-page .container-aluno { 
+    transform: scale(0.88); /* Diminui os cards em 12% nesta página específica para caberem mais itens */
+    transform-origin: top center;/* Define que o encolhimento aconteça a partir do topo */
+  }
+
+  .aulas-page .card-text-aluno > div:not(.topo-aula-card) { 
+    padding: 16px 24px !important;             /* Ajuste de respiro para o conteúdo de texto da aula */
+    min-height: auto;                          /* Remove a restrição de altura mínima nesta página */
+  }
+
+  .aulas-page .topo-aula-card { 
+    padding: 16px !important;                  /* Reduz o padding interno do cabeçalho do card */
+    margin-bottom: -7px !important;            /* Ajuste negativo para aproximar o cabeçalho do corpo do card */
+  }
+
+  .card-text-aluno > div:not(.topo-aula-card){
+    overflow-wrap: break-word;                 /*quebra palavras longas para não estourar o card */
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Descrição alinhada à esquerda */
+  .aulas-page .card-text-aluno > div:nth-of-type(2) {
+    text-align: left !important;               /* Força o alinhamento à esquerda*/
+    margin-bottom: 5px !important;            
+    width: 100%;                               /* Ocupa toda a largura disponível para o alinhamento funcionar */
+  }
+
+  /* Topo do card (Cabeçalho colorido dentro do card de aula) */
+  .topo-aula-card {
+    width: 100%;                              
+    padding: 24px;                            
+    text-align: center;                       
+    border-radius: 20px;                       
+    background-color: var(--card-color);       
+    color: white;                          
+  }
+
+  /* Botão final do card aula */
+  .btn-VerAula-final {
+    background-color: var(--card-color);       
+    color: white;                              
+    border-radius: 12px;                     
+    border: none;                             
+    font-weight: 600;                          
+    padding: 10px 24px;                       
+    margin-bottom: 24px;                       
+    transition: all 0.25s ease; /* Suaviza escala e transparência no hover */
+  }
+
+  .btn-VerAula-final:hover {
+    transform: scale(1.05);                   
+    opacity: 0.9;                             /
+  }
+
+  /* Caixa do modal */
+  .modal-content {
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+  }
+
+  /* Título principal */
+  .modal-body h5 {
+      color: var(--tool-blue-black);
+  }
+
+  /* Texto descritivo */
+  .modal-body p {
+      font-size: 0.9rem;
+  }
+
+  /* Input custom */
+  .modal-body input {
+      height: 45px;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+      padding-left: 15px;
+  }
+
+  .modal-body input:focus {
+      box-shadow: none;
+      border-color: #dc3545; /* vermelho */
+  }
+
+  /* Botão principal */
+  .modal-body .btn-danger {
+      border-radius: 12px;
+      padding: 10px 30px;
+      font-weight: 600;
+  }
+
+  /* Responsividade (Media Queries para telas de celular/tablet) */
+  @media (max-width: 768px) {
+    .footer-copy { text-align: center; padding-right: 0; } /* Centraliza o copyright no mobile */
+    main { padding: 20px; }                                 /* Reduz o espaçamento geral da página */
+    .welcome-card { padding: 25px; }                        /* Compacta o card de boas-vindas */
+    .container-aluno { width: 100%; }                       /* Faz os cards ocuparem a largura total da tela no celular */
+    .card-text-aluno { flex-direction: column; text-align: center; } /* Empilha ícone e texto verticalmente no mobile */
+    .icone-card-aluno { margin-bottom: 15px; }              /* Espaço entre ícone e texto no modo empilhado */
+    .titulo-disciplina { 
+      max-width: 100%;                                      /* Remove o limite de largura do título */
+      white-space: normal;                                  /* Permite que o título quebre linhas no celular */
+      text-overflow: unset;                                 /* Remove as reticências para mostrar o nome todo */
+    }
+    .sidebar-fctool {
+      background-color: var(--tool-blue-black);
+      display: none;
+    }
+    .offcanvas{
+      background-color: var(--tool-blue-black) !important;
+      color: white; /* Garante que o texto geral fique visível */
+    }
+  .offcanvas-header {
+      display: flex;
+      flex-direction: column; /* Empilha a logo e o botão de fechar */
+      align-items: center;    /* Centraliza horizontalmente no flex */
+      position: relative;     
+      padding-top: 2rem;      /* Dá um respiro no topo */
     }
 
-    .topbar-fctool .ps-2 {
-        width: 100%;           /* Título ocupa a linha toda */
-        text-align: center;
-        padding-left: 0 !important;
+    .offcanvas-header img {
+      margin: 0 auto;         /* Margem automática nas laterais */
+      display: block;         /* Garante que a imagem se comporte como bloco */
+      max-width: 120px;       
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .topbar-fctool .ms-auto {
-        margin: 0 auto !important; /* Centraliza o switch Light/Dark */
+
+    .offcanvas-header .btn-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      margin: 0;
+      filter: invert(1) grayscale(100%) brightness(200%);
     }
-    /* No mobile, o card volta a ser simples , fica só um*/
-      @media (max-width: 991px) {
-         .login-card-double {
-            max-width: 400px;
-             }
-          .right-side {
-              border-radius: 1.5rem !important;
-          }
+
+    
+    /* Faz os cards ocuparem a largura total da linha no mobile */
+    .container-aluno {
+      width: 100%;
+      max-width: 320px; /* Limite para não ficar gigante em tablets */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* O fundo 'escada' precisa ser menor que o card da frente */
+    .fundo-cor-card {
+      width: 90%;      /* Em vez de fixo, ele ocupa 90% do card pai */
+      left: 5%;        /* Centraliza o fundo (5% de cada lado sobra) */
+      top: -10px;      /* Mantém ele subindo um pouco */
+      height: 60px;
+      z-index: 1;
+    }
+
+    /* Garante que o card da frente fique por cima */
+    .card-text-aluno {
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Impede que o texto e o switch briguem por espaço */
+      .topbar-fctool {
+          height: auto !important; /* Deixa a barra crescer conforme o conteúdo */
+          flex-wrap: wrap;        /* Permite que os itens pulem linha */
+          padding: 15px !important;
+          gap: 10px;
       }
 
+      .topbar-fctool .ps-2 {
+          width: 100%;           /* Título ocupa a linha toda */
+          text-align: center;
+          padding-left: 0 !important;
+      }
 
-}
+      .topbar-fctool .ms-auto {
+          margin: 0 auto !important; /* Centraliza o switch Light/Dark */
+      }
+      /* No mobile, o card volta a ser simples , fica só um*/
+        @media (max-width: 991px) {
+          .login-card-double {
+              max-width: 400px;
+              }
+            .right-side {
+                border-radius: 1.5rem !important;
+            }
+        }
+
+
+  }
