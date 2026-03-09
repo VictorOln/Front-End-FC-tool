@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCTOOL - Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Menu que só aparece em tela mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
+        <div class="offcanvas-header">
+            <img src="./assets/img/logo.png" alt="Logo" class="img-fluid" style="max-width:120px;">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="bi bi-house-door-fill me-3"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="disciplinas.html" class="nav-link">
+                        <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!-- adicionei o d-flex e coloquei o nowrap pra não quebrar a linha e invadir o resto do conteúdo -->
+        <div class="row d-flex flex-nowrap">
+            
+            <!-- Não deixa o conteúdo ser esmagado -->
+            <div class="col-md-2 px-0 sidebar-fctool d-none d-md-block" style="flex-shrink: 0; min-width: 250px;">
+                <div class="sidebar-header">
+                    <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-fctool">
+                </div>
+                
+                <hr class="mx-3 mt-0 mb-0 opacity-25 text-white">
+
+                <nav class="mt-4">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">
+                                <i class="bi bi-house-door-fill me-3"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="disciplinas.html" class="nav-link">
+                                <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- tireo o col 10 para uma classe flex-fill do bootstrap que coloca todo o conteúdo fora da sidebar em uma caixa, para que o conteuno não se misture com a sidebar -->
+            <div class="flex-fill px-0 bg-light" style="min-height: 100vh; overflow-x: hidden;">
+                
+                <!-- Header Mobile (Botão Hambúrguer) -->
+                <header class="d-md-none p-3 bg-white border-bottom">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+                        <i class="bi bi-list fs-2"></i>
+                    </button>
+                </header>
+                
+                <main class="p-5">
+                    
+                   
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-perfil me-4">VO</div>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Victor Oliveira do Nascimento</h4>
+                                    <p class="text-muted mb-0">Aluno</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-fctool-outline shadow">
+                                <i class="bi bi-upload me-2"></i> Carregar foto
+                            </button>
+                        </div>
+                    </div>
+                     <div class="card card-fctool shadow-sm p-2 justify-content-between mb-4">
+                        <ul class="nav nav-pills nav-fill nav-perfil">
+                            <li class="nav-item"><a class="nav-link active" href="#">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="configuracoes.html">Configurações</a></li>
+                            <li class="nav-item"><a class="nav-link" href="instituicao.html">Instituição</a></li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Informações Pessoais</h5>
+                        <form class="row g-4">
+                            <div class="col-md-6">
+                                <label class="label-fctool">NOME</label>
+                                <input type="text" class="form-control input-fctool" placeholder="Digite seu nome">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="label-fctool">SOBRENOME</label>
+                                <input type="text" class="form-control input-fctool" placeholder="Digite seu sobrenome">
+                            </div>
+                            <div class="col-12">
+                                <label class="label-fctool">USUÁRIO</label>
+                                <input type="text" class="form-control input-fctool" placeholder="Ex: victor_Oln">
+                            </div>
+                            <div class="col-12">
+                                <label class="label-fctool">E-MAIL</label>
+                                <input type="email" class="form-control input-fctool" placeholder="seuemail@exemplo.com">
+                                <small class="text-muted d-flex align-items-center mt-2 gap-2">
+                                    <i class="bi bi-lock-fill"></i> Seu e-mail não será exibido publicamente.
+                                </small>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-fctool-danger px-4">SALVAR ALTERAÇÕES</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- senha -->
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Senha</h5>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="label-fctool">NOVA SENHA</label>
+                                <input type="password" class="form-control input-fctool" placeholder="••••••••">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="label-fctool">CONFIRMAR NOVA SENHA</label>
+                                <input type="password" class="form-control input-fctool" placeholder="••••••••">
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-fctool-danger px-4">DEFINIR SENHA</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Contas Conectadas</h5>
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center bg-light p-3 rounded border gap-3">
+                            <div class="d-flex align-items-center gap-2 overflow-hidden">
+                                <div class="bg-white p-2 rounded border flex-shrink-0">📧</div>
+                                <span class="text-break">victor.oliveira10@aluno.ifce.edu.br</span>
+                            </div>
+                            <button class="btn btn-outline-secondary btn-sm text-nowrap">DESCONECTAR</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-5 mb-4 text-muted">
+                        <button class="btn btn-link text-danger text-decoration-none fw-bold p-0">
+                            <i class="bi bi-trash3 me-2"></i>DELETAR CONTA
+                        </button>
+                        <div class="d-flex gap-4 small fw-medium">
+                            <span>Termos de Serviço</span>
+                            <span>Política de Privacidade</span>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

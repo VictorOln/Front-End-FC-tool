@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCTOOL - Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Menu que só aparece em tela mobile -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
+        <div class="offcanvas-header">
+            <img src="./assets/img/logo.png" alt="Logo" class="img-fluid" style="max-width:120px;">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="bi bi-house-door-fill me-3"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="disciplinas.html" class="nav-link">
+                        <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+       
+        <div class="row d-flex flex-nowrap">
+            
+            
+            <div class="col-md-2 px-0 sidebar-fctool d-none d-md-block" style="flex-shrink: 0; min-width: 250px; min-height: 100vh;">
+                <div class="sidebar-header">
+                    <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-fctool">
+                </div>
+                
+                <hr class="mx-3 mt-0 mb-0 opacity-25 text-white">
+
+                <nav class="mt-4">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">
+                                <i class="bi bi-house-door-fill me-3"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="disciplinas.html" class="nav-link">
+                                <i class="bi bi-book me-3"></i> Disciplinas/Cursos
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+           
+            <div class="flex-fill px-0 bg-light" style="min-height: 100vh; overflow-x: hidden;">
+                
+                <!-- Header Mobile (Botão Hambúrguer) -->
+                <header class="d-md-none p-3 bg-white border-bottom">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+                        <i class="bi bi-list fs-2"></i>
+                    </button>
+                </header>
+
+                <main class="p-5">
+                    
+                  
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-perfil me-4">VO</div>
+                                <div>
+                                    <h4 class="fw-bold mb-0">Victor Oliveira do Nascimento</h4>
+                                    <p class="text-muted mb-0">Aluno</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-fctool-outline shadow">
+                                <i class="bi bi-upload me-2"></i> Carregar foto
+                            </button>
+                        </div>
+                    </div>
+
+                 
+                    <div class="card card-fctool shadow-sm p-2 justify-content-between mb-4">
+                        <ul class="nav nav-pills nav-fill nav-perfil">
+                            <li class="nav-item"><a class="nav-link" href="perfil.html">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#">Configurações</a></li>
+                            <li class="nav-item"><a class="nav-link" href="instituicao.html">Instituição</a></li>
+                        </ul>
+                    </div>
+
+              
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Privacidade</h5>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 mb-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="privacidade" id="publico" checked>
+                            </div>
+                            <label class="form-check-label" for="publico">
+                                <span class="fw-bold d-block text-dark">Público</span>
+                                <small class="text-muted">Compartilhe seu FCTool com outros professores no FCTool</small>
+                            </label>
+                        </div>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="privacidade" id="privado">
+                            </div>
+                            <label class="form-check-label" for="privado">
+                                <span class="fw-bold d-block text-dark">Privado</span>
+                                <small class="text-muted">Compartilhe seu FCTool apenas com alunos</small>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Atribuições Padrão</h5>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 mb-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="atribuicao" id="evitar_pular" checked>
+                            </div>
+                            <label class="form-check-label" for="evitar_pular">
+                                <span class="fw-bold d-block text-dark">Evitar pular</span>
+                                <small class="text-muted">Os alunos poderão pular vídeos</small>
+                            </label>
+                        </div>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="atribuicao" id="fechar_legendas">
+                            </div>
+                            <label class="form-check-label" for="fechar_legendas">
+                                <span class="fw-bold d-block text-dark">Fechar legendas</span>
+                                <small class="text-muted">Os alunos verão legendas ocultas</small>
+                            </label>
+                        </div>
+                    </div>
+
+            
+                    <div class="card card-fctool shadow-sm p-4 mb-4">
+                        <h5 class="titulo-sessao-perfil mb-4">Preferência de contato</h5>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 mb-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="contato" id="atualiza_uso" checked>
+                            </div>
+                            <label class="form-check-label" for="atualiza_uso">
+                                <span class="fw-bold d-block text-dark">Me atualize sobre meu uso do FCTool (maior espaço de armazenamento, códigos de classe)</span>
+                            </label>
+                        </div>
+                        <div class="opcao-privacidade d-flex align-items-start p-3 rounded border">
+                            <div class="form-check me-3 mt-1">
+                                <input class="form-check-input check-fctool" type="radio" name="contato" id="atualiza_ofertas">
+                            </div>
+                            <label class="form-check-label" for="atualiza_ofertas">
+                                <span class="fw-bold d-block text-dark">Atualize sobre eventos e ofertas especiais do meu FCTool</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- RODAPÉ -->
+                    <div class="d-flex justify-content-center align-items-center gap-4 small fw-medium mt-5">
+                        <span>Termos de Serviço</span>
+                        <span>Política de Privacidade</span>
+                    </div>
+
+                </main>
+            </div> 
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

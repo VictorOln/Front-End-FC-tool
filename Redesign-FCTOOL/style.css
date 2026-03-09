@@ -159,7 +159,9 @@
     left: 0;
     box-shadow: 7px 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+   
   }
+
 
   /* Ajuste para os Checkboxes da tela de escolha */
   .custom-check {
@@ -209,8 +211,8 @@
     color: rgba(255, 255, 255, 0.8); 
     font-weight: 500;                 
     transition: 0.3s ease;     /* Efeito de transição suave em todas as mudanças de estado (hover/active) */
-    padding: 1rem 1.5rem;             
-    margin: 5px 15px;  
+    padding: 0.8rem 1.5rem;             
+    margin: 8px 15px 8px;  
     
     display: flex;
     align-items: center; /* Alinha o ícone e o texto verticalmente */
@@ -227,6 +229,8 @@
     border-radius: 25px;                            
     color: white;                                   
     box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;    
+    display: flex !important;
+    width: auto;
   }
 
   .nav-link:hover:not(.active) {
@@ -600,6 +604,146 @@
       font-weight: 600;
   }
 
+
+
+/* --- Cards dos perfis --- */
+.card-fctool {
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* --- 2. avatar de perfil o VO */
+.avatar-perfil {
+    width: 80px;
+    height: 80px;
+    background-color: #72a2c0; 
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+
+.nav-perfil .nav-link {
+    color: #444;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.nav-perfil .nav-link.active {
+    background-color: #72a2c0 !important;
+    color: white !important;
+}
+
+/* --- barrinhas vermeia --- */
+.titulo-sessao-perfil {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #222;
+    border-left: 4px solid var(--tool-red);
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* ---  --- */
+.label-fctool {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+}
+
+.input-fctool {
+    border: none !important;
+    border-bottom: 1.5px solid #e0e0e0 !important;
+    border-radius: 0 !important;
+    padding: 8px 0 !important;
+    font-weight: 400;
+    background-color: transparent !important;
+    color: #333;
+}
+
+.input-fctool:focus {
+    box-shadow: none !important;
+    border-bottom-color: var(--tool-red) !important;
+}
+
+
+.btn-fctool-danger {
+    background-color: var(--tool-red);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    padding: 10px 20px;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-fctool-danger:hover {
+    background-color: #a01a1a;
+    color: white;
+}
+
+.btn-fctool-outline {
+    border: 1.5px solid var(--tool-red);
+    color: var(--tool-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    background: white;
+}
+
+
+.bg-light-fctool, .conta-conectada-item {
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+}
+
+.info-email {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: 25px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 135px; 
+}
+
+
+.opcao-privacidade {
+    background-color: #f9f9f9;
+    border-color: #eee !important;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.opcao-privacidade:hover {
+    background-color: #f1f1f1;
+}
+
+.check-fctool {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+}
+
+.check-fctool:checked {
+    background-color: var(--tool-red) !important;
+    border-color: var(--tool-red) !important;
+}
   /* Responsividade (Media Queries para telas de celular/tablet) */
   @media (max-width: 768px) {
     .footer-copy { text-align: center; padding-right: 0; } /* Centraliza o copyright no mobile */
@@ -696,6 +840,33 @@
                 border-radius: 1.5rem !important;
             }
         }
+          /* Ajustes para Celular */
+@media (max-width: 576px) {
+    main.p-5 {
+        padding: 1.5rem !important; /* Diminui o recuo de 5 para 1.5 no mobile */
+    }
+    
+    .avatar-perfil {
+        width: 70px;
+        height: 70px;
+        font-size: 1.4rem;
+    }
+
+    .titulo-sessao-perfil {
+        font-size: 1.1rem;
+    }
+    
+    /* Faz o item de conta conectada empilhar o botão */
+    .conta-conectada-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+    
+    .conta-conectada-item button {
+        width: 100%;
+    }
+}
 
 
   }
