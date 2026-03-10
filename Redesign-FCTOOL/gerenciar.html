@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FCTOOL - Gerenciar Turma</title>
+    <title>Gerenciar Turma</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -13,7 +13,7 @@
 
 <body class="aulas-page">
 
-    <!-- Menu Offcanvas (Mobile) -->
+
     <div class="offcanvas offcanvas-start bg-dark-fctool" tabindex="-1" id="sidebarMobile">
         <div class="offcanvas-header">
             <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-mobile-fctool" style="max-width:120px;">
@@ -22,8 +22,8 @@
         <div class="offcanvas-body px-0">
             <nav>
                 <ul class="nav nav-pills flex-column sidebar-fctool-links">
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><i class="bi bi-house-door-fill me-3"></i> Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link active"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
+                    <li class="nav-item"><a href="home-prof.html" class="nav-link text-white"><i class="bi bi-house-door-fill me-3"></i> Home</a></li>
+                    <li class="nav-item"><a href="minhas_turmas.html" class="nav-link active"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
                     <li class="nav-item">
                         <a class="nav-link d-flex align-items-center justify-content-between text-white" data-bs-toggle="collapse" href="#menuAulasMobile">
                             <span><i class="bi bi-file-earmark-check me-2"></i> Gerenciar aulas</span>
@@ -32,9 +32,9 @@
                         <div class="collapse" id="menuAulasMobile">
                             <div class="sidebar-submenu-container">
                                 <ul class="nav flex-column">
-                                    <li><a href="#" class="link-submenu">Adicionar aulas</a></li>
-                                    <li><a href="#" class="link-submenu">Listar</a></li>
-                                     <li><a href="#" class="link-submenu">Aulas arquivadas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-plus-square me-3"></i> Adicionar aulas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-list-ul me-3"></i> Listar aulas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-archive me-3"></i> Aulas arquivadas</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
     <div class="container-fluid">
         <div class="row d-flex flex-nowrap">
 
-            <!-- SIDEBAR REFORÇADA (PADRÃO 250px) -->
+
             <aside class="col-md-2 px-0 sidebar-fctool d-none d-md-block" style="flex-shrink: 0; min-width: 250px;">
                 <div class="sidebar-header">
                     <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-fctool">
@@ -65,8 +65,9 @@
                             <div class="collapse show" id="menuAulas">
                                 <div class="sidebar-submenu-container">
                                     <ul class="nav flex-column">
-                                        <li><a href="#" class="link-submenu">Adicionar aulas</a></li>
-                                        <li><a href="#" class="link-submenu">Listar aulas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-plus-square me-3"></i> Adicionar aulas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-list-ul me-3"></i> Listar aulas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-archive me-3"></i> Aulas arquivadas</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -76,10 +77,10 @@
                 </nav>
             </aside>
 
-            <!-- CONTEÚDO FLEX-FILL -->
+
             <div class="flex-fill px-0 bg-light d-flex flex-column" style="overflow-x: hidden;">
 
-                <!-- TOPBAR PADRONIZADA -->
+
                 <header class="topbar-fctool d-flex align-items-center justify-content-between px-4">
                     <button class="btn d-md-none me-3 fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
                         <i class="bi bi-list"></i>
@@ -110,8 +111,8 @@
                 <div class="linha-separadora"></div>
 
                 <main class="p-4 p-md-5">
-             <div class="card card-fctool shadow-sm p-4 p-md-5 mx-auto manage-card">
-                  
+                    <div class="card card-fctool shadow-sm p-4 p-md-5 mx-auto manage-card">
+
                         <div class="d-flex justify-content-between align-items-start mb-5">
                             <div style="border-left: 6px solid #a31525; padding-left: 20px;">
                                 <h3 class="fw-bold mb-0">Membros da turma: xxxx</h3>
@@ -152,10 +153,10 @@
                         <hr style="width: 80%; margin: 0 auto; opacity: 0.1;">
                         <p class="mt-4 text-muted">2026 FCTOOL</p>
                     </div>
+            </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

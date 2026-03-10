@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FCTOOL - Dashboard Professor</title>
+    <title>Home prof</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body class="aulas-page">
 
-   
+
     <div class="offcanvas offcanvas-start bg-dark-fctool" tabindex="-1" id="sidebarMobile">
         <div class="offcanvas-header">
             <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-mobile-fctool">
@@ -21,7 +23,7 @@
             <nav>
                 <ul class="nav nav-pills flex-column sidebar-fctool-links">
                     <li class="nav-item"><a href="#" class="nav-link active"><i class="bi bi-house-door-fill me-3"></i> Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-white"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
+                    <li class="nav-item"><a href="minhas_turmas.html" class="nav-link text-white"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
                     <li class="nav-item">
                         <a class="nav-link d-flex align-items-center justify-content-between text-white" data-bs-toggle="collapse" href="#menuAulasMobile">
                             <span><i class="bi bi-file-earmark-check me-2"></i> Gerenciar aulas</span>
@@ -30,9 +32,9 @@
                         <div class="collapse" id="menuAulasMobile">
                             <div class="sidebar-submenu-container">
                                 <ul class="nav flex-column">
-                                    <li><a href="#" class="link-submenu">Adicionar aulas</a></li>
-                                    <li><a href="#" class="link-submenu">Listar aulas</a></li>
-                                      <li><a href="#" class="link-submenu">Aulas arquivadas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-plus-square me-3"></i> Adicionar aulas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-list-ul me-3"></i> Listar aulas</a></li>
+                                    <li><a href="#" class="link-submenu"><i class="bi bi-archive me-3"></i> Aulas arquivadas</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -45,7 +47,7 @@
     <div class="container-fluid">
         <div class="row d-flex flex-nowrap">
 
-      
+
             <div class="col-md-2 px-0 sidebar-fctool d-none d-md-block" style="flex-shrink: 0; min-width: 250px;">
                 <div class="sidebar-header">
                     <img src="./assets/img/logo.png" alt="Logo" class="img-fluid logo-fctool">
@@ -54,18 +56,18 @@
                 <nav class="mt-4">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item"><a href="#" class="nav-link active"><i class="bi bi-house-door-fill me-3"></i> Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link text-white"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
+                        <li class="nav-item"><a href="minhas_turmas.html" class="nav-link text-white"><i class="bi bi-journal-bookmark me-3"></i> Minhas turmas</a></li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center justify-content-between nav-gerenciar-aulas text-white" data-bs-toggle="collapse" href="#menuAulas" role="button">
                                 <span><i class="bi bi-file-earmark-check me-2"></i> Gerenciar aulas</span>
                                 <i class="bi bi-caret-down-fill small"></i>
                             </a>
-                            <div class="collapse show" id="menuAulas"> 
+                            <div class="collapse show" id="menuAulas">
                                 <div class="sidebar-submenu-container">
                                     <ul class="nav flex-column">
-                                        <li><a href="#" class="link-submenu">Adicionar aulas</a></li>
-                                        <li><a href="#" class="link-submenu">Listar aulas</a></li>
-                                         <li><a href="#" class="link-submenu">Aulas arquivadas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-plus-square me-3"></i> Adicionar aulas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-list-ul me-3"></i> Listar aulas</a></li>
+                                        <li><a href="#" class="link-submenu"><i class="bi bi-archive me-3"></i> Aulas arquivadas</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,9 +77,9 @@
                 </nav>
             </div>
 
-         
+
             <div class="flex-fill px-0 bg-light d-flex flex-column" style="overflow-x: hidden;">
-                
+
                 <header class="topbar-fctool d-flex align-items-center justify-content-between px-4">
                     <button class="btn d-md-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
                         <i class="bi bi-list fs-2"></i>
@@ -108,8 +110,8 @@
                 <div class="linha-separadora"></div>
 
                 <main class="p-4 p-md-5">
-                 
-                    <div class="d-flex flex-wrap gap-5 justify-content-center justify-content-md-start">
+
+                    <div class="d-flex flex-wrap gap-5 justify-content-center justify-content-md-start align-items-start">
                         <div class="container-card-turma shadow bg-red-fctool">
                             <div class="icone-moldura-azul shadow">
                                 <img src="./assets/img/classe.png" alt="Monitor" class="img-fluid">
@@ -139,7 +141,7 @@
                         </div>
                     </div>
 
-                  
+
                     <h4 class="mt-5 mb-4 fw-bold">Últimas aulas atualizadas</h4>
                     <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-md-start">
                         <div class="container-aluno">
@@ -148,7 +150,8 @@
                                 <h5 class="fw-bold">Turma 1</h5>
                                 <p class="mb-1">Título do Conteúdo</p>
                                 <p class="small text-muted">Subtítulo</p>
-                                <span class="text-danger small fw-bold">Em edição</span>
+                                <span class="text-primary small fw-bold">Postada</span>
+
                             </div>
                         </div>
 
@@ -156,9 +159,10 @@
                             <div class="fundo-cor-card bg-red-fctool"></div>
                             <div class="card-text-aluno p-4">
                                 <h5 class="fw-bold">Turma 2</h5>
-                                <p class="mb-1">caralhooooooooooooooooooooooooooooooooooooooooooooooooo</p>
+                                <p class="mb-1">titulo do conteudo</p>
                                 <p class="small text-muted">Subtítulo</p>
-                                <span class="text-primary small fw-bold">Postada</span>
+                                <span class="text-danger small fw-bold">Em edição</span>
+
                             </div>
                         </div>
                     </div>
@@ -169,4 +173,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
