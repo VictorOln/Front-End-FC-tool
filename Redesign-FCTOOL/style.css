@@ -911,9 +911,9 @@
 .btn-dark-red-prof:hover { background-color: var(--tool-vinho) !important; }
 .btn-blue-light:hover { background-color: var(--tool-blue-light) !important; }
 
-/* --- TELA 404 --- */
+
 .bg-light-404 {
-    background-color: #f9f7f2; /* Tom creme clarinho da imagem */
+    background-color: var(--tool-gray); 
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -924,17 +924,16 @@
     justify-content: center;
 }
 
-/* O 404 grande e transparente no fundo */
+
 .error-bg-text {
     font-size: 12rem;
-    color: rgba(176, 29, 34, 0.08); /* Nosso vermelho com muita transparência */
+    color: rgba(176, 29, 34, 0.08); 
     letter-spacing: 15px;
 }
 
-/* O 404 centralizado e nítido */
 .error-main-text {
     font-size: 5rem;
-    color: var(--tool-red); /* #b01d22 */
+    color: var(--tool-red); 
     margin: 0;
 }
 
