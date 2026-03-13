@@ -782,7 +782,7 @@
 .corpo-card-turma {
     text-align: right;
     margin-bottom: 25px;
-    padding-left: 100px;
+  
 }
 
 .titulo-turma-prof {
@@ -803,6 +803,7 @@
 }
 
 .footer-turma-prof {
+
     display: flex;
     gap: 15px;
     border-top: 1px solid rgba(255,255,255,0.2);
@@ -885,21 +886,67 @@
 }
 
 .btn-dark-red-prof {
-    background-color: var(--tool-vinho)
+    background-color: var(--tool-vinho);
 }
 
 .btn-blue-light {
     background-color: var(--tool-blue-light);
 }
 
-/* Efeito hover básico para não ficar estático */
-.btn-red-prof:hover, .btn-dark-prof:hover, .btn-dark-red:hover, .btn-blue-light:hover {
-    opacity: 0.9;
-    color: white;
+  
+.btn-red-prof:hover, 
+.btn-dark-prof:hover, 
+.btn-dark-red-prof:hover, 
+.btn-blue-light:hover {
+    opacity: 1;
+    color: white !important; 
+    filter: brightness(1.2); 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 
+.btn-red-prof:hover { background-color: var(--tool-red) !important; }
+.btn-dark-prof:hover { background-color: var(--tool-blue-black) !important; }
+.btn-dark-red-prof:hover { background-color: var(--tool-vinho) !important; }
+.btn-blue-light:hover { background-color: var(--tool-blue-light) !important; }
 
+/* --- TELA 404 --- */
+.bg-light-404 {
+    background-color: #f9f7f2; /* Tom creme clarinho da imagem */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error-code-container {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* O 404 grande e transparente no fundo */
+.error-bg-text {
+    font-size: 12rem;
+    color: rgba(176, 29, 34, 0.08); /* Nosso vermelho com muita transparência */
+    letter-spacing: 15px;
+}
+
+/* O 404 centralizado e nítido */
+.error-main-text {
+    font-size: 5rem;
+    color: var(--tool-red); /* #b01d22 */
+    margin: 0;
+}
+
+.btn-outline-fctool {
+    border: 1px solid #ddd;
+    background: white;
+    color: #444;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
 
 
 
